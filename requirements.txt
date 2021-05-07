@@ -1,0 +1,6 @@
+optuna==2.5.0
+torch==1.6.0
+numpy
+torchvision
+tqdm
+matplotlib
