@@ -1,7 +1,6 @@
 import torch
 from torchvision import transforms, datasets
 
-
 # for extra speed
 DEVICE = torch.device("cuda")
 
@@ -21,6 +20,7 @@ def preload_data():
     test_labels = torch.tensor(test_labels, device=DEVICE)
     return train_images, train_labels, test_images, test_labels
 
+
 (
     TRAIN_IMAGES,
     TRAIN_LABELS,
@@ -30,7 +30,6 @@ def preload_data():
 
 
 class PersonalDataLoader:
-
     """ dataloader that preloads all data onto GPU """
 
     def __init__(self, train=True, batch_size: int = 128):
@@ -75,4 +74,3 @@ class PersonalDataLoader:
                self.labels[
                    self.indices[item].squeeze()
                ]
-

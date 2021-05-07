@@ -87,7 +87,7 @@ def train(activation, batch_size, hidden_dim, lr, weight_decay):
             sigmoid=nn.Sigmoid(),
             leakyrelu=nn.LeakyReLU(negative_slope=0.05),
             tanh=nn.Tanh()
-        )[activation]     # convert string to actual activation
+        )[activation]  # convert string to actual activation
     network = Model(hidden_dim=hidden_dim, activation=activation).to(DEVICE)
     loss_fn = nn.CrossEntropyLoss()
     opt = optim.SGD(network.parameters(), lr=lr, weight_decay=weight_decay)
